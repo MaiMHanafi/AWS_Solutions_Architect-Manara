@@ -1,43 +1,72 @@
 # AWS_Solutions_Architect-Manara
-# Scalable Web Application with ALB and Auto Scaling
+# Scalable Web Application on AWS with ALB and Auto Scaling
 
 ## Project Overview
-This project demonstrates deploying a scalable and highly available web application on AWS using EC2, Application Load Balancer (ALB), and Auto Scaling Group (ASG). It showcases how to optimize cost and performance by automatically adjusting the number of instances based on demand.
+This project demonstrates how to deploy a highly available and scalable web application on AWS using EC2 instances, Application Load Balancer (ALB), and Auto Scaling Groups (ASG). The architecture ensures fault tolerance, load distribution, and automatic scaling based on traffic demands.
 
 ## Architecture
-- EC2 instances in multiple availability zones running the web app.
-- ALB distributing incoming traffic across EC2 instances.
-- ASG automatically scales EC2 instances based on load.
-- Amazon RDS Multi-AZ for backend database.
-- CloudWatch monitors the application and triggers scaling.
-- SNS alerts notify stakeholders on scaling events or alarms.
+The solution is deployed within a Virtual Private Cloud (VPC) that contains multiple Availability Zones (AZs) for high availability. Key components include:
 
-## AWS Services Used
-- EC2, ALB, ASG
-- Amazon RDS
-- IAM Roles
-- CloudWatch & SNS
+- **Public Subnets (AZ-1 & AZ-2):** Hosts the Application Load Balancer and EC2 instances.
+- **Application Load Balancer (ALB):** Distributes incoming traffic across multiple EC2 instances.
+- **Auto Scaling Group (ASG):** Automatically scales EC2 instances based on load metrics.
+- **Private Subnets (Multi-AZ):** Hosts the Amazon RDS database instances for high availability and failover.
+- **IAM Roles:** Secure and role-based access for EC2 instances.
+- **CloudWatch & SNS:** Monitoring performance metrics and sending alerts on thresholds.
 
-## Deployment Instructions
-1. Clone the repo.
-2. Launch EC2 instances with the provided user-data script or AMI.
-3. Configure ALB and attach target groups.
-4. Setup Auto Scaling policies (scale out at 70% CPU, scale in at 30% CPU).
-5. Deploy RDS instance.
-6. Configure CloudWatch alarms and SNS notifications.
+![Architecture Diagram](architecture_diagram.png)  
+*Note: Refer to the diagram file for detailed infrastructure layout.*
 
-## Testing the Application
-- Access the ALB DNS URL to see the web app.
-- Use load testing tools (e.g., Apache JMeter) to simulate traffic and observe scaling.
+## Key AWS Services Used
+- **Amazon EC2** - Compute capacity for hosting the web application.
+- **Application Load Balancer (ALB)** - Traffic distribution and fault tolerance.
+- **Auto Scaling Group (ASG)** - Automatic scaling of instances based on demand.
+- **Amazon RDS** (Optional) - Multi-AZ database backend (MySQL/PostgreSQL).
+- **IAM Roles** - Secure access management for EC2 instances.
+- **CloudWatch & SNS** - Performance monitoring and notifications.
 
-## Cost Optimization
-- Use spot instances in ASG.
-- Set min and max instance counts appropriately.
-- Use RDS instance types matching workload.
+## Features
+- Highly available multi-AZ architecture.
+- Load balancing with ALB.
+- Auto-scaling EC2 instances for cost and performance optimization.
+- Secure role-based access with IAM.
+- Database failover support with Multi-AZ RDS.
+- Automated monitoring and alerting using CloudWatch and SNS.
 
-## Monitoring & Alerts
-- CloudWatch CPU Utilization alarms.
-- SNS email notifications on scaling events.
+## Getting Started
+
+### Prerequisites
+- AWS Account with sufficient permissions.
+- AWS CLI configured.
+- Basic knowledge of AWS services.
+
+### Deployment Steps
+
+1. **Set up the VPC and Subnets**  
+   Create a VPC with two public and two private subnets across two AZs.
+
+2. **Launch RDS Instances**  
+   Deploy Multi-AZ Amazon RDS instances in private subnets.
+
+3. **Create Security Groups**  
+   Configure security groups for ALB, EC2 instances, and RDS.
+
+4. **Deploy EC2 Instances with IAM Roles**  
+   Launch EC2 instances in public subnets with an attached IAM role.
+
+5. **Configure Auto Scaling Group and ALB**  
+   Set up an Auto Scaling Group with desired scaling policies and associate it with the ALB.
+
+6. **Set up CloudWatch Monitoring and SNS Alerts**  
+   Configure CloudWatch alarms to monitor CPU and other metrics; integrate with SNS for notifications.
+
+7. **Test the Application**  
+   Access the ALB DNS name and verify load balancing and scaling behavior.
+
+## GitHub Repository
+All project code, scripts, and deployment instructions are available at:  
+[https://github.com/yourusername/scalable-webapp-aws](https://github.com/yourusername/scalable-webapp-aws)  
+
 
 ## Author
 Mai Mohamed Hanafi - maihanafi34@gmail.com
