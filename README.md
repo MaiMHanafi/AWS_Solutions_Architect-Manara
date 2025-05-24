@@ -65,7 +65,7 @@ The solution is deployed within a Virtual Private Cloud (VPC) that contains mult
 
 ## GitHub Repository
 All project code, scripts, and deployment instructions are available at:  
-[https://github.com/yourusername/scalable-webapp-aws](https://github.com/MaiMHanafi/AWS_Solutions_Architect-Manara.git)
+[https://github.com/MaiMHanafi/AWS_Solutions_Architect-Manara.git]
 
 
 ## Author
