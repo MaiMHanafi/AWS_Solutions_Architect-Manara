@@ -14,7 +14,7 @@ The solution is deployed within a Virtual Private Cloud (VPC) that contains mult
 - **IAM Roles:** Secure and role-based access for EC2 instances.
 - **CloudWatch & SNS:** Monitoring performance metrics and sending alerts on thresholds.
 
-![Architecture Diagram](architecture_diagram.png)  
+![Architecture Diagram](Blank diagram.png)  
 *Note: Refer to the diagram file for detailed infrastructure layout.*
 
 ## Key AWS Services Used
