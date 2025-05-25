@@ -108,16 +108,6 @@ A logically isolated network that hosts all the AWS resources (subnets, EC2s, da
 
 ---
 
-## 🔄 Request Flow
-
-```mermaid
-graph LR
-A[User Browser] --> B[Application Load Balancer]
-B --> C1[EC2 Instance - AZ1]
-B --> C2[EC2 Instance - AZ2]
-C1 --> D[Amazon RDS - Primary (AZ1)]
-C2 --> E[Amazon RDS - Standby (AZ2)]
-
 ## GitHub Repository
 All project code, scripts, and deployment instructions are available at:  
 [https://github.com/MaiMHanafi/AWS_Solutions_Architect-Manara.git]
