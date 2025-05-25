@@ -14,8 +14,7 @@ The solution is deployed within a Virtual Private Cloud (VPC) that contains mult
 - **IAM Roles:** Secure and role-based access for EC2 instances.
 - **CloudWatch & SNS:** Monitoring performance metrics and sending alerts on thresholds.
 
-![Architecture Diagram](Blank diagram.png)  
-*Note: Refer to the diagram file for detailed infrastructure layout.*
+![Architecture Diagram](https://github.com/MaiMHanafi/AWS_Solutions_Architect-Manara/blob/main/Blank%20diagram.png)
 
 ## Key AWS Services Used
 - **Amazon EC2** - Compute capacity for hosting the web application.
