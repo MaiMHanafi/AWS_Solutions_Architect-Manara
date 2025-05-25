@@ -62,6 +62,62 @@ The solution is deployed within a Virtual Private Cloud (VPC) that contains mult
 7. **Test the Application**  
    Access the ALB DNS name and verify load balancing and scaling behavior.
 
+
+
+---
+
+## 🔧 Project Components in more detailed explanation
+
+### 🧱 Virtual Private Cloud (VPC)
+A logically isolated network that hosts all the AWS resources (subnets, EC2s, databases, etc.).
+
+---
+
+### 🌐 Public Subnets (AZ-1 & AZ-2)
+
+#### 🔁 Application Load Balancer (ALB)
+- Entry point to the application.
+- Distributes incoming HTTP/HTTPS traffic to healthy EC2 instances across AZs.
+
+#### 💻 EC2 Instances (Web Servers)
+- Hosted in an **Auto Scaling Group**.
+- Automatically scales in/out based on demand (e.g., CPU > 70%).
+- Web application is deployed here (e.g., Node.js, Flask, etc.).
+
+#### 🔐 IAM Role for EC2
+- Allows secure access to other AWS services (e.g., S3, CloudWatch) without hardcoding credentials.
+
+---
+
+### 🔐 Private Subnets (Multi-AZ)
+
+#### 💾 Amazon RDS (MySQL/PostgreSQL)
+- Managed relational database service.
+- Multi-AZ deployment for **high availability and failover**.
+- Only accessible from the EC2 web servers.
+
+---
+
+### 📊 Monitoring and Alerts
+
+#### 🧠 Amazon CloudWatch
+- Monitors system metrics (CPU, memory, disk, etc.).
+
+#### 📩 Amazon SNS (Simple Notification Service)
+- Sends email/SMS notifications when alarms are triggered (e.g., high CPU).
+
+---
+
+## 🔄 Request Flow
+
+```mermaid
+graph LR
+A[User Browser] --> B[Application Load Balancer]
+B --> C1[EC2 Instance - AZ1]
+B --> C2[EC2 Instance - AZ2]
+C1 --> D[Amazon RDS - Primary (AZ1)]
+C2 --> E[Amazon RDS - Standby (AZ2)]
+
 ## GitHub Repository
 All project code, scripts, and deployment instructions are available at:  
 [https://github.com/MaiMHanafi/AWS_Solutions_Architect-Manara.git]
