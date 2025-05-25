@@ -20,7 +20,7 @@ The solution is deployed within a Virtual Private Cloud (VPC) that contains mult
 - **Amazon EC2** - Compute capacity for hosting the web application.
 - **Application Load Balancer (ALB)** - Traffic distribution and fault tolerance.
 - **Auto Scaling Group (ASG)** - Automatic scaling of instances based on demand.
-- **Amazon RDS** (Optional) - Multi-AZ database backend (MySQL/PostgreSQL).
+- **Amazon RDS** - Multi-AZ database backend (MySQL/PostgreSQL).
 - **IAM Roles** - Secure access management for EC2 instances.
 - **CloudWatch & SNS** - Performance monitoring and notifications.
 
