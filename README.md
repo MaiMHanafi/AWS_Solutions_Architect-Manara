@@ -14,7 +14,7 @@ The solution is deployed within a Virtual Private Cloud (VPC) that contains mult
 - **IAM Roles:** Secure and role-based access for EC2 instances.
 - **CloudWatch & SNS:** Monitoring performance metrics and sending alerts on thresholds.
 
-![Architecture Diagram](https://github.com/MaiMHanafi/AWS_Solutions_Architect-Manara/blob/main/Scalable%20Web%20Application%20with%20ALB%20and%20Auto%20Scaling_Diagram.png)
+![Architecture Diagram](https://github.com/MaiMHanafi/AWS_Solutions_Architect-Manara/blob/main/Project1_Scalable%20Web%20Application%20with%20ALB%20and%20Auto%20Scaling.png)
 ## Key AWS Services Used
 - **Amazon EC2** - Compute capacity for hosting the web application.
 - **Application Load Balancer (ALB)** - Traffic distribution and fault tolerance.
